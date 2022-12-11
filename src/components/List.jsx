@@ -1,4 +1,5 @@
 import React from "react";
+import '../styles/List.scss';
 import ListItem from './ListItem';
 const List = () => {
   return (

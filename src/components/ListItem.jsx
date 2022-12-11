@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../context/Context";
+import '../styles/ListItem.scss';
 
 const ListItem = () => {
-  const listValue = useContext(Context);
+  const list = useContext(Context).list;
 
   return(
     <div className="ListItem">
@@ -17,7 +18,7 @@ const ListItem = () => {
         </thead>
         <tbody>
           {
-            listValue.map((data, idx)=>(
+            list.map((data, idx)=>(
               <tr key={idx}>
                 <td>{data.date}</td>
                 <td>{data.type}</td>

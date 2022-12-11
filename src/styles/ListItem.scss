@@ -1,0 +1,26 @@
+.ListItem{
+    display:flex;
+    justify-content:center;
+
+    table{
+        width:80%;
+        margin-top:30px;
+        border-collapse: collapse;
+        border:2px solid palevioletred;
+        
+        thead{
+            font-weight:bold;
+            background-color:rgb(177, 52, 93);
+            color:#fff;
+        }
+
+        tr{
+           text-align:center;
+           height:50px;
+
+           td{
+            width:25%;
+           }
+        }
+    }
+}

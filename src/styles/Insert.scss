@@ -7,24 +7,31 @@
     align-items:center;
 
     form{
-        width:auto;
+        width:80%;
         display:flex;
         justify-content:center;
         align-items:center;
 
-        input{
-            padding:12px 0px;
+        input, select, button{
+            width:22%;
+            height:40px;
+            border:none;
             margin:0 5px;
+            border-radius:4px;
+            text-align:center;
         }
     
-
-        button{
-            border:none;
-            border-radius:10px;
-            padding:13px 17px;
-            margin-left:10px;
+        button, .typeselect{
+            width:10%;
+            max-width: 70px;
             cursor:pointer;
         }
+
+        button{
+            cursor:pointer
+        }
+
+        
     }
 
 } 
