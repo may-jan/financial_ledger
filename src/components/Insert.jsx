@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../styles/Insert.scss';
+import Swal from 'sweetalert2';
 
 const Insert = ({insertHandler, get, use}) => {
 
@@ -31,7 +32,14 @@ const Insert = ({insertHandler, get, use}) => {
 
   const clickHandler = () => {
     if(inputs.date === '' || inputs.text === '' || inputs.price === ''){
-      return alert('항목이 제대로 입력되지 않았습니다 다시 입력해주세요')
+      return( 
+        Swal.fire({
+        icon: 'warning',
+        footer: '모든 항목을 입력해주세요 ✏️',
+        showConfirmButton: false,
+        timer: 1800
+      })
+    )
     }
 
     if(inputs.type === '지출'){
@@ -41,13 +49,20 @@ const Insert = ({insertHandler, get, use}) => {
     }
 
     insertHandler(inputs)
+
+    setInputs({
+      date : '',
+      type : '',
+      text : '',
+      price : ''
+    })
   }
 
   return (
     <div className="Insert">
       <form onSubmit={submitHandler}>
         <input type='date' name='date' className="dateInput"
-               onChange={changeHandler}
+               onChange={changeHandler} value={inputs.date}
         />
         <select value={select} name='type'className="typeselect"
                 onChange={selectHandler}>
@@ -55,10 +70,10 @@ const Insert = ({insertHandler, get, use}) => {
           <option value='수입'>수입</option>
         </select>
         <input type='text' name='text' className="textInput"
-               onChange={changeHandler} placeholder="내용"
+               onChange={changeHandler} value={inputs.text} placeholder="내용"
         />
         <input type='number' name='price'className="priceInput"
-                onChange={changeHandler} placeholder="금액"
+                onChange={changeHandler} value={inputs.price} placeholder="금액"
         />
         <button onClick={clickHandler}>입력</button>
       </form>
