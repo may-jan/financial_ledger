@@ -6,12 +6,11 @@
         width:80%;
         margin-top:30px;
         border-collapse: collapse;
-        border:2px solid palevioletred;
+        border:2px solid rgb(9, 132, 227);
         
         thead{
             font-weight:bold;
-            background-color:rgb(177, 52, 93);
-            color:#fff;
+            background-color:rgb(116, 185, 255);
         }
 
         tr{
@@ -21,6 +20,24 @@
            td{
             width:25%;
            }
+        }
+    }
+}
+
+@media screen and (max-width :  768px){
+    .ListItem{
+        table{
+            thead{
+                font-size:0.9rem;
+            }
+
+            tbody{
+                font-size:0.8rem;
+            }
+            
+            tr{
+                height:35px;
+            }
         }
     }
 }

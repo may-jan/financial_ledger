@@ -35,7 +35,7 @@ const Insert = ({insertHandler, get, use}) => {
       return( 
         Swal.fire({
         icon: 'warning',
-        footer: '모든 항목을 입력해주세요 ✏️',
+        text: '모든 항목을 입력해주세요 ✏️',
         showConfirmButton: false,
         timer: 1800
       })
@@ -52,7 +52,8 @@ const Insert = ({insertHandler, get, use}) => {
 
     setInputs({
       date : '',
-      type : '',
+      // 여기 수정하기
+      type : select,
       text : '',
       price : ''
     })
@@ -64,7 +65,7 @@ const Insert = ({insertHandler, get, use}) => {
         <input type='date' name='date' className="dateInput"
                onChange={changeHandler} value={inputs.date}
         />
-        <select value={select} name='type'className="typeselect"
+        <select value={inputs.type} name='type'className="typeselect"
                 onChange={selectHandler}>
           <option value='지출'>지출</option>
           <option value='수입'>수입</option>

@@ -1,0 +1,34 @@
+.Insert {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Insert form {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Insert form input, .Insert form select, .Insert form button {
+  width: 22%;
+  height: 40px;
+  border: none;
+  margin: 0 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+.Insert form button, .Insert form .typeselect {
+  width: 10%;
+  max-width: 70px;
+  cursor: pointer;
+}
+.Insert form button {
+  background-color: #74b9ff;
+  cursor: pointer;
+}
+.Insert form button:hover {
+  background-color: #0984e3;
+  color: #fff;
+}
